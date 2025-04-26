@@ -14,6 +14,9 @@ const toCurr = document.querySelector(".to select");
 // Selecting the div where the exchange message will be displayed
 const msg = document.querySelector(".msg");
 
+// Selecting the swap icon (i element)
+const swapIcon = document.querySelector(".dropdown i");
+
 // Loop through each dropdown (from and to)
 for (let select of dropdowns) {
   // Loop through each currency code in the countryList object
@@ -102,5 +105,20 @@ btn.addEventListener("click", (evt) => {
 
 // Automatically update exchange rate when page loads
 window.addEventListener("load", () => {
+  updateExchangeRate();
+});
+
+// Swap 'from' and 'to' currencies when swap icon is clicked
+swapIcon.addEventListener("click", () => {
+  // Swap the selected currencies
+  let temp = fromCurr.value;
+  fromCurr.value = toCurr.value;
+  toCurr.value = temp;
+
+  // Update flags after swapping
+  updateFlag(fromCurr);
+  updateFlag(toCurr);
+
+  // Update the exchange rate after swapping currencies
   updateExchangeRate();
 });
