@@ -108,6 +108,64 @@ form button {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+/* DARK MODE STYLES */
+body.dark {
+  background-color: #2c2c2c;
+  color: #fff;
+}
+
+body.dark .container {
+  background-color: #3a3a3a;
+  color: #fff;
+}
+
+body.dark form button {
+  background-color: #8a2be2;
+}
+
+body.dark form button:hover {
+  background-color: #6b22b8;
+}
+
+/* THEME TOGGLE BUTTON */
+.theme-toggle {
+  background-color: #af4d98;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.theme-toggle:hover {
+  background-color: #952d7c;
+}
+
+/* TOAST NOTIFICATION */
+.toast {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 1rem;
+  opacity: 0;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+
+.toast.show {
+  visibility: visible;
+  opacity: 1;
+}
+
 
 /* Button hover effect */
 form button:hover {
